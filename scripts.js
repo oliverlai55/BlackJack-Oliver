@@ -88,6 +88,7 @@ function placeCard(card, who, slot){
 		}
 		// theDivWithTheCardWeWantToReplace.innerHTML = card;
 		$(currId).html(card);
+		//document.getElementById(currId).innerHTML = card;
 	
 }
 
@@ -95,10 +96,12 @@ function placeCard(card, who, slot){
 function bust(who){
 	if(who === "player"){
 		//player lost!! Dealer Won!!
-		document.getElementById('message').innerHTML = "You have busted"
+		// document.getElementById('message').innerHTML = "You have busted"
+		$(message).html("you have busted")
 
 	}else {
-		document.getElementById('message').innerHTML = "The dealer has busted"
+		// document.getElementById('message').innerHTML = "The dealer has busted"
+		$(message).html("The dealer has busted")
 
 	}
 }
@@ -220,7 +223,8 @@ function reset() {
 
 function stand (){
 	// var dealHas = calculateTotal(dealerHand, 'dealer');
-	var dealerHas = Number(document.getElementById('dealer-total').innerHTML);
+	// var dealerHas = Number(document.getElementById('dealer-total').innerHTML);
+	var dealerHas = Number($('dealer-total').html);
 	var slot
 	while(dealerHas < 17){
 		//keep hitting..keep drawing..get more cards
